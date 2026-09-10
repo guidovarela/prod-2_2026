@@ -45,7 +45,24 @@
         }
 
 
+        // Guardar Datos en MySQL
 
+        // 1- conexion servidor Mysql
+        $host="localhost";
+        $user="root";
+        $pass="";
+        $database="nuevositio";
+
+        $conexion = mysqli_connect($host,$user,$pass,$database) or die("Hubo un error. <br>".mysqli_error());
+
+        // 2- realizar una consulta mysql
+        // $fechaCarga=date("Y-m-d");
+        $query1="INSERT INTO contacto VALUES(0,$nombre,$email,$asunto,$mensaje,$fechaEnvio)";
+        // (`id`, `nombre`, `email`, `asunto`, `mensaje`, `fechaEnvio`)
+        $consulta = mysqli_query($conexion,$query1);
+        mysqli_close();
+        echo $consulta;
+        // 3- verificar subida de datos
 
 
         ?>
