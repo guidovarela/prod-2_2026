@@ -15,6 +15,10 @@
             Contacto
         </h2> 
 
+        <div class="data">
+            <a href="mostrarUsuarios.php" class="btn btn-outline-primary">Ver datos</a>
+        </div>
+
         <form action="php2_recibirDatos.php" method="POST" class="w-50 mx-auto">
         <div>
             Nombre y apellido

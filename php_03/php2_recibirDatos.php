@@ -51,7 +51,7 @@
         $host="localhost";
         $user="root";
         $pass="";
-        $database="nuevositio1";
+        $database="nuevositio";
 
         $conexion = mysqli_connect($host, $user, $pass, $database);
         if ($conexion === false) {
@@ -60,7 +60,9 @@
 
         // 2- realizar una consulta mysql
         $fechaCarga=date("Y-m-d");
+       
         $query1="INSERT INTO contacto VALUES(0,'$nombre','$email','$asunto','$mensaje','$fechaCarga')";
+       
         $consulta = mysqli_query($conexion,$query1) or die("Hubo un error en la consulta. <br>".mysqli_error($conexion));
         mysqli_close($conexion);    
         
@@ -72,6 +74,10 @@
         }
         ?>
         
+        <div class="data">
+            <a href="mostrarUsuarios.php" class="btn btn-outline-primary">Ver datos</a>
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
