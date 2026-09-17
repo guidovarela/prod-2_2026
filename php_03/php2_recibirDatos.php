@@ -51,20 +51,25 @@
         $host="localhost";
         $user="root";
         $pass="";
-        $database="nuevositio";
+        $database="nuevositio1";
 
-        $conexion = mysqli_connect($host,$user,$pass,$database) or die("Hubo un error. <br>".mysqli_error());
+        $conexion = mysqli_connect($host, $user, $pass, $database);
+        if ($conexion === false) {
+            die("Hubo un error. <br>" . mysqli_connect_error());
+        }
 
         // 2- realizar una consulta mysql
-        // $fechaCarga=date("Y-m-d");
-        $query1="INSERT INTO contacto VALUES(0,$nombre,$email,$asunto,$mensaje,$fechaEnvio)";
-        // (`id`, `nombre`, `email`, `asunto`, `mensaje`, `fechaEnvio`)
-        $consulta = mysqli_query($conexion,$query1);
-        mysqli_close();
-        echo $consulta;
+        $fechaCarga=date("Y-m-d");
+        $query1="INSERT INTO contacto VALUES(0,'$nombre','$email','$asunto','$mensaje','$fechaCarga')";
+        $consulta = mysqli_query($conexion,$query1) or die("Hubo un error en la consulta. <br>".mysqli_error($conexion));
+        mysqli_close($conexion);    
+        
         // 3- verificar subida de datos
-
-
+        if($consulta==true){
+            echo "<p class='alert alert-success'>Datos guardados correctamente</p>";    
+        }else{
+            echo "<p class='alert alert-danger'>Hubo un error en la carga de datos</p>";
+        }
         ?>
         
     </div>
