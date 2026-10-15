@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body class="color-scheme-light">
+
+
+    <div class="container header show ">
+        <div class="form-field">
+            <div class="switch">
+                <input type="checkbox" id="validationCustomSwitch" role="switch" switch>
+            </div>
+            <label for="validationCustomSwitch" id="validationCustomSwitchLabel">Modo Oscuro</label>
+        </div>
+        <h1 class="fg-white">hola Mundo!</h1>
+    </div>
+
+
+
+
+
+    <header class="container bg-white">
+        <h2 class="text-danger">Esto es un container (responsive)</h2>
+    </header>
+
+    <div class="container-fluid bg-danger bg-50">
+        Esto es un container Fluid (width: 100%)
+    </div>
+
+    <div class="container-fluid bg1">
+        <div class="container">
+            <h3>Esto es un container dentro de otro container</h3>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <h2>Grillas</h2>
+
+    <div class="container">
+
+
+        <h2>Grillas anidadas</h2>
+        <div class="">
+
+            <div class="row gx-2">
+                <div class="md:col-8 bg-success">Anidada 1
+
+                    <div class="row">
+                        <div class="md:col-6">sub dato 1</div>
+                        <div class="md:col-6">sub dato 2</div>
+                    </div>
+
+
+                </div>
+                <div class="md:col-4 bg-danger ">Anidada 2</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center">
+        <div class="row gx-2">
+            <div class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+            <div class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+            <div class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+        </div>
+    </div>
+
+    grillas con anchos variables
+
+    <div class="container ">
+        <div class="row g-3">
+            <div class="col-3 bg-danger">col-3</div>
+            <div class="col-9 bg-success">col-9</div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="lg:col-3 md:col-6 sm:col-12 mb-5">
+                lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+            <div class="lg:col-3 md:col-6 sm:col-12 mb-5">
+                lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+            <div class="lg:col-3 md:col-6 sm:col-12 mb-5">
+                lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+            <div class="lg:col-3 md:col-6 sm:col-12 mb-5">
+                lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus minus excepturi nesciunt quam autem
+                aspernatur, consequatur nemo ipsam vitae eos quod repudiandae quo perspiciatis error laudantium saepe
+                quaerat ea ut!
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

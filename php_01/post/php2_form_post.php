@@ -15,29 +15,27 @@
             Enviando datos por un formulario
         </h2> 
 
-        <form action="php2_recibirDatos.php" method="POST" class="w-50 mx-auto">
-
-        <div>
-            Usuario
-            <input class="form-control" type="text" name="user">
-        </div>
-        <div>
-            Password
-            <input class="form-control" type="password" name="pass">
-        </div>
-        <div>
-            Nombre
-            <input class="form-control" type="text" name="name">
-        </div>
-        <div>
-            Escribe tu cancion favorita:
-            <input class="form-control" type="text" name="favsong">
-        </div>
-        <input type="submit" class="btn btn-info mt-3" value="Enviar info">
-
-
-        </form>    
-        
+        <section class="container">
+            <form action="php2_recibirDatos.php" method="POST" class="">
+                <div>
+                    Usuario
+                    <input class="form-control" type="text" name="user">
+                </div>
+                <div>
+                    Password
+                    <input class="form-control" type="password" name="pass">
+                </div>
+                <div>
+                    Nombre
+                    <input class="form-control" type="text" name="name">
+                </div>
+                <div>
+                    Escribe tu cancion favorita:
+                    <input class="form-control" type="text" name="favsong">
+                </div>
+                <input type="submit" class="btn btn-info mt-3" value="Enviar info">
+            </form>    
+        </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

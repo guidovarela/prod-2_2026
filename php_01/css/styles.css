@@ -8,6 +8,10 @@ body{
     box-sizing: border-box;
 }
 
-.box-base{width:80%;margin:0 auto;border:solid;border-radius:10px;
+.box-base{
+    width:80%;
+    margin:0 auto;
+    border:solid;
+    border-radius:10px;
     padding: 2%;
 }
