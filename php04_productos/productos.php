@@ -26,19 +26,31 @@ $resultado = mysqli_query($conexion, $query);
     <h1>Catálogo de Productos</h1>
 
 
-    <div class="catalogo">
+
+    <div class="catalogo row">
         <?php
         // Recorremos cada fila obtenida de la base de datos
         while ($producto = mysqli_fetch_array($resultado)) {
         ?>
-            <div class="tarjeta-producto">
-                <span class="categoria"><?php echo $producto['categoria']; ?></span>
-                <img src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
-                <h3><?php echo $producto['nombre']; ?></h3>
-                <p><?php echo $producto['descripcion']; ?></p>
-                <p class="precio">$<?php echo $producto['precio']; ?></p>
-                <a href="detalle_producto.php?id=<?php echo $producto['id_producto']; ?>" class="btn btn-primary">Ver más</a>
-            </div>
+        <div class="md:col-6 lg:col-3">
+            <div class="card ">
+                <div class="card-body">
+                    <div class="card-img">
+                        <img class="img-fluid" src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
+                    </div>    
+                    <span class="badge badge-subtle theme-primary"><?php echo $producto['categoria']; ?></span>
+                    <h3><?php echo $producto['nombre']; ?></h3>
+                    <div class="row">
+                        <div class="col">
+                            <p class="precio card-title">$<?php echo $producto['precio']; ?></p>
+                        </div>
+                        <div class="col">
+                            <a href="detalle_producto.php?id=<?php echo $producto['id_producto']; ?>" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>               
+            </div>  
+        </div>
         <?php
         }
 
