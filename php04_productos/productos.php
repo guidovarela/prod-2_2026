@@ -4,39 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php $title = "UTN 2021" ?>
+    <?php $title = "E-commerce" ?>
     
     <title><?php echo $title ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
 <?php
 include("header.php");
 // Inclusión del archivo de conexión centralizado
-include("conexion.php");
+require_once("conexion.php");
 
 // Ejecución de la consulta SQL para seleccionar todos los productos
 $query = "SELECT * FROM productos";
 $resultado = mysqli_query($conexion, $query);
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Catálogo de Productos</title>
-    <style>
-        .catalogo { display: flex; flex-wrap: wrap; gap: 20px; }
-        .tarjeta-producto { border: 1px solid #ccc; padding: 15px; width: 220px; border-radius: 8px; }
-        .tarjeta-producto img { max-width: 100%; height: auto; border-radius: 4px; }
-        .precio { font-weight: bold; color: #2e7d32; }
-        .categoria { font-size: 0.8em; color: #777; text-transform: uppercase; }
-    </style>
-</head>
-<body>
+<div class="container">
 
     <h1>Catálogo de Productos</h1>
+
 
     <div class="catalogo">
         <?php
@@ -49,6 +37,7 @@ $resultado = mysqli_query($conexion, $query);
                 <h3><?php echo $producto['nombre']; ?></h3>
                 <p><?php echo $producto['descripcion']; ?></p>
                 <p class="precio">$<?php echo $producto['precio']; ?></p>
+                <a href="detalle_producto.php?id=<?php echo $producto['id_producto']; ?>" class="btn btn-primary">Ver más</a>
             </div>
         <?php
         }
@@ -58,8 +47,11 @@ $resultado = mysqli_query($conexion, $query);
         ?>
     </div>
 
+    </div>
     <?php 
         include("footer.php");
     ?>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </body>
 </html>

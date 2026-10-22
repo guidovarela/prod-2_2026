@@ -10,15 +10,15 @@
                 </div>
                 <div class="col-5">
                     <span>
-                        <a href="">Nosotros</a>
-                        <a href="">Servicios</a>
-                        <a href="">Contacto</a>
+                        <a href="productos.php">Tienda</a>
+                        <a href="#">Servicios</a>
+                        <a href="#">Contacto</a>
                     </span>
                 </div>
 
                 <div class="col-3">
                     <form action="mostrarusuarios.php" method='post'>
-                        <input type="search" class="form-control" name="busqueda" placeholder="buscar usuarios...">
+                        <input type="search" class="form-control" name="busqueda" placeholder="buscar productos...">
                     </form>
                 </div>
             </div>
