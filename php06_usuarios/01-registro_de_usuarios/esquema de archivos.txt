@@ -1,0 +1,9 @@
+
+
+Panel usuarios
+
+formulario Registro (altausuario.php) -> nuevoregistro.php
+   -> Formulario Login (formlogin.php) -> login.php 
+        -> mostrar usuarios (mostrarUsuarios.php)
+
+        ->salir (salir.php) -> login
