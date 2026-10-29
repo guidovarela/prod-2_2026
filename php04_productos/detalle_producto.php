@@ -44,11 +44,11 @@ if (isset($_GET['id']) or isset($_GET['categoria'])) {
             <nav aria-label="breadcrumb"></nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a class="breadcrumb-link" href="index.php">Inicio</a>
+                        <a class="breadcrumb-link" href="productos.php">Tienda</a>
                     </li>
                     <li class="breadcrumb-divider"></li>
                     <li class="breadcrumb-item">
-                        <a class="breadcrumb-link" href="detalle_producto.php?categoria=<?php echo $producto['categoria']; ?>"><?php echo $producto['categoria']; ?></a>
+                        <a class="breadcrumb-link" href="detalle_categoria.php?categoria=<?php echo $producto['categoria']; ?>"><?php echo $producto['categoria']; ?></a>
                     </li>
                     <li class="breadcrumb-divider"></li>
                     <li class="breadcrumb-item active" aria-current="page">

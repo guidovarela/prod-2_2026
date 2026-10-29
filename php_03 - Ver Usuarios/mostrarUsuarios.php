@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
-<body>
-    
-    <h1>Listado de Usuarios</h1>
+<body class="color-scheme-light">
+    <?php
+    include("header.php");
+    ?>
+    <h2>Listado de Usuarios</h1>
 
     <?php
     
     // 1- conexion servidor Mysql
-
-        $host="localhost";
-        $user="root";
-        $pass="";
-        $database="nuevositio";
-
-        $conexion = mysqli_connect($host, $user, $pass, $database);
-        if ($conexion === false) {
-            die("Hubo un error. <br>" . mysqli_connect_error());
-        }
+    include("conexion.php");
 
         // 2- realizar una consulta mysql
-        $query2="SELECT * FROM contacto";
+        $query2="SELECT id,nombre FROM contacto";
         $resultado = mysqli_query($conexion,$query2) or die("Hubo un error en la consulta. <br>".mysqli_error($conexion));   
 
         // 3- recorrer los resultados de la consulta 
@@ -36,10 +30,15 @@
         // mysqli_fetch_assoc() devuelve un array asociativo de la fila obtenida
         // mysqli_fetch_row() devuelve un array numérico de la fila obtenida
 
+        echo "<ul>";
         for($i=0;$i<mysqli_num_rows($resultado);$i++){
             $fila = mysqli_fetch_array($resultado);
-            echo "<p>id:" . $fila[0] . " - " . $fila['nombre'] . " - " . $fila['email'] . "<br> Fecha de registro: " . $fila['fechaEnvio'] . "</p>";
+            echo    "<li>
+                <a href='detalle_usuario.php?id=" . $fila['id'] . "'>" . $fila['nombre'] . "</a>
+            </li>";
         }
+        echo "</ul>";
+
 
         // 5- cerrar la conexion
         mysqli_close($conexion);
@@ -47,6 +46,8 @@
 
     ?>
 
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 
 </body>
 </html>
