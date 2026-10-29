@@ -12,7 +12,7 @@
 	$apellido = $_POST['apellido'];
 	$email = $_POST['email'];
 	$usuario = $_POST['usuario'];
-	$password = md5($_POST['password']);
+	$password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
 /*if(isset($_POST['newsletter'])){
 	$news="si";
